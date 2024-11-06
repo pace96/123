@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Suhu Celcius ke Fahrenheit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            color: blue;
+            font-size: 2em;
+        }
+
+        h2 {
+            text-align: right;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.3em;
+            color: rgb(247, 73, 4);
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>KONVERSI SUHU CELCIUS KE FAHRENHEIT</h1>
+        <h2>by elwidodo</h2>
+        <label for="celcius">Masukkan Suhu (Celcius):</label>
+        <input type="number" id="celcius" placeholder="Contoh: 25" required>
+        <button onclick="convertSuhu()">Konversi</button>
+    
+        <div class="result" id="result"></div>
+    </div>
+
+
+    <script>
+        function convertSuhu() {
+            // Ambil nilai suhu dari input
+            var celcius = parseFloat(document.getElementById("celcius").value);
+            if (isNaN(celcius)) {
+                document.getElementById("result").innerText = "Masukkan nilai yang valid!";
+                return;
+            }
+
+            // Konversi Celcius ke Fahrenheit
+            var fahrenheit = (9 / 5 * celcius) + 32;
+
+            // Tampilkan hasil
+            document.getElementById("result").innerText = "HASIL KONVERSI SUHU = " + fahrenheit.toFixed(2) + " °F";
+        }
+    </script>
+
+</body>
+
+</html>
